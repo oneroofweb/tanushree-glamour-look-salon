@@ -1,0 +1,864 @@
+
+        /* CSS Variables for Easy Theming */
+        :root {
+            --primary-gold: #D4AF37; /* Rich Gold */
+            --primary-gold-hover: #b5952f;
+            --dark-overlay: rgba(18, 18, 18, 0.75); /* Dark transparent background */
+            --whatsapp-green: #25D366;
+            --whatsapp-green-hover: #1EBE5D;
+            --text-light: #ffffff;
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Poppins', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-body);
+            margin: 0;
+            padding: 0;
+        }
+
+        /* --- Hero Section Styling --- */
+        .hero-section {
+            position: relative;
+            min-height: 100vh; /* Full screen height */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            /* Update the URL with your preferred high-quality image */
+            background-image: url('images/hero-bg.jpeg');
+            background-size: cover;
+            background-position: center top;
+            background-repeat: no-repeat;
+            color: var(--text-light);
+            z-index: 1;
+        }
+
+        /* Dark Overlay to make text pop */
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: var(--dark-overlay);
+            z-index: -1;
+        }
+
+        /* Hero Content Container */
+        .hero-content {
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        /* Typography */
+        .hero-subtitle {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: var(--primary-gold);
+            margin-bottom: 20px;
+            display: block;
+            font-weight: 500;
+        }
+
+        .hero-title {
+            font-family: var(--font-heading);
+            font-size: 4rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            font-weight: 300;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        /* --- Button Styling --- */
+        .btn-wrapper {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap; /* Allows stacking on very small screens */
+        }
+
+        .btn-custom {
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        .btn-custom i {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        /* Call Button (Gold Outline/Solid Hover) */
+        .btn-call {
+            background-color: transparent;
+            color: var(--primary-gold);
+            border: 2px solid var(--primary-gold);
+        }
+
+        .btn-call:hover {
+            background-color: var(--primary-gold);
+            color: #121212;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+        }
+
+        /* WhatsApp Button (Solid Green) */
+        .btn-whatsapp {
+            background-color: var(--whatsapp-green);
+            color: var(--text-light);
+            border: 2px solid var(--whatsapp-green);
+        }
+
+        .btn-whatsapp:hover {
+            background-color: transparent;
+            color: var(--whatsapp-green);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.8rem;
+            }
+            .hero-description {
+                font-size: 1rem;
+            }
+            .btn-custom {
+                padding: 12px 30px;
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            .btn-wrapper {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .btn-custom {
+                width: 100%; /* Full width buttons on small mobiles */
+            }
+        }
+
+/* 
+=============================================================
+        About Us - Section
+=============================================================
+*/
+
+/* CSS */
+.about-section {
+    background-color: #f5f5f5; /* Light grey background matching the image */
+    padding: 60px 0;
+}
+
+.about-section .main-heading {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 500;
+    color: #222;
+    letter-spacing: 1px;
+    margin-bottom: 2rem;
+}
+
+.about-section .sub-heading {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #2c2c2c;
+    line-height: 1.5;
+}
+
+.about-section .body-text {
+    /* Using a serif font for the paragraph exactly like the screenshot */
+    font-family: 'Playfair Display', 'Times New Roman', serif; 
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #555;
+    text-align: justify !important;
+}
+
+.about-section .text-underline {
+    text-decoration: underline;
+    text-decoration-color: #888;
+    text-underline-offset: 3px;
+}
+
+.about-section .founder-img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); /* Slight shadow for depth */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 991px) {
+    .about-section .main-heading {
+        font-size: 1.8rem;
+    }
+    .about-section .sub-heading {
+        font-size: 1.2rem;
+        text-align: center;
+    }
+    .about-section .body-text {
+        text-align: left; /* Better readability on small screens */
+    }
+}
+
+/* 
+=============================================================
+        Stat - Section
+=============================================================
+*/
+/* CSS */
+.stats-section {
+    background-color: #f4f4f4; /* Light grey background matching the image */
+    padding: 70px 0;
+    border-top: 1px solid #eaeaec;
+    border-bottom: 1px solid #eaeaec;
+}
+
+.stats-section .stat-icon-wrapper {
+    margin-bottom: 15px;
+}
+
+.stats-section .stat-icon {
+    font-size: 2rem;
+    color: #333;
+    /* FontAwesome thin look */
+    font-weight: 300; 
+}
+
+.stats-section .stat-heading {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+}
+
+.stats-section .stat-text {
+    /* Playfair Display use kiya hai serif look ke liye jaisa image me hai */
+    font-family: 'Playfair Display', serif; 
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 0;
+    max-width: 280px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .stats-section {
+        padding: 50px 0;
+    }
+}
+
+/* 
+=============================================================
+        Story - Section
+=============================================================
+*/
+
+/* CSS */
+.our-story-section {
+    background-color: #f4f4f4; /* Matches the light grey background */
+}
+
+.our-story-section .section-label {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+    color: #222;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.our-story-section .main-heading {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #222;
+    line-height: 1.5;
+}
+
+.our-story-section .story-text {
+    font-family: 'Playfair Display', 'Times New Roman', serif; /* Serif font for the long text */
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #444;
+    text-align: justify; /* Keeps the edges straight like in the screenshot */
+}
+
+.our-story-section .text-underline {
+    text-decoration: underline;
+    text-decoration-color: #888;
+    text-underline-offset: 3px;
+}
+
+.our-story-section .story-img {
+    width: 100%;
+    max-width: 550px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05); /* Very subtle shadow so it doesn't look flat */
+    object-fit: cover;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 991px) {
+    .our-story-section .section-label {
+        font-size: 1.2rem;
+    }
+    .our-story-section .main-heading {
+        font-size: 1.4rem;
+    }
+    .our-story-section .story-text {
+        text-align: left; /* Better for reading on small mobile screens */
+    }
+    .our-story-section .story-img {
+        margin-top: 20px;
+    }
+}
+
+/* ================ Service Section ============ */
+/* CSS */
+.deals-section {
+    background-color: #ffffff;
+}
+
+.deals-heading {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    color: #222;
+}
+
+.deal-card {
+    border: 1px solid #e0e0e0;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.deal-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.deal-img-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Makes the image perfectly square */
+    overflow: hidden;
+    background-color: #f8f8f8;
+}
+
+.deal-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Gradient overlay at the bottom for text readability */
+.deal-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+    color: white;
+}
+
+/* For cards where text is at the top (like Hydrafacial) */
+.deal-overlay.overlay-top {
+    bottom: auto;
+    top: 0;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0) 100%);
+    color: #222;
+}
+
+.brand-tag {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.deal-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+/* Buttons */
+.btn-deal-light {
+    background-color: #f4f4f4;
+    color: #222;
+    border: none;
+    border-radius: 0;
+    padding: 15px 0;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+}
+
+.btn-deal-dark {
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    border-radius: 0;
+    padding: 15px 0;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+}
+
+.btn-deal-light:hover { background-color: #e0e0e0; }
+.btn-deal-dark:hover { background-color: #222222; color: #fff;}
+
+/* =================  Video Testimonials ================ */
+/* CSS */
+.testimonial-video-section {
+    background-color: #ffffff;
+}
+
+.section-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #222;
+}
+
+.title-line {
+    width: 60px;
+    height: 3px;
+    background-color: #b48d55; /* Gold Color */
+    margin: 15px auto;
+}
+
+/* Video Card Styling */
+.video-reel-card {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.video-reel-card:hover {
+    transform: translateY(-8px);
+}
+
+.video-wrapper {
+    position: relative;
+    /* 9:16 Aspect Ratio for Mobile Size */
+    aspect-ratio: 9 / 16; 
+    width: 100%;
+    background-color: #000;
+}
+
+.video-thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.85;
+}
+
+/* Play Button Overlay */
+.play-btn-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255,255,255,0.3);
+    border: 2px solid #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.2rem;
+    backdrop-filter: blur(5px);
+    transition: 0.3s;
+}
+
+.video-reel-card:hover .play-btn-overlay {
+    background-color: #b48d55;
+    border-color: #b48d55;
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* Client Info Overlay */
+.client-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    color: white;
+}
+
+.client-info p {
+    font-size: 0.95rem;
+    margin-bottom: 2px;
+}
+
+.client-info small {
+    font-size: 0.75rem;
+    opacity: 0.8;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 576px) {
+    .video-reel-card {
+        border-radius: 10px;
+    }
+    .play-btn-overlay {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+}
+
+/* ==================== Image Testimonial ===================== */
+/* CSS */
+.testimonial-text-section {
+    background-color: #f9f9f9; /* Halka grey background */
+}
+
+/* Reusing these from previous section if you want consistency */
+.section-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #222;
+}
+.title-line {
+    width: 60px;
+    height: 3px;
+    background-color: #b48d55;
+    margin: 15px auto;
+}
+
+/* Testimonial Card Styling */
+.testimonial-card {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border-top: 3px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+    border-top-color: #b48d55;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.quote-icon {
+    font-size: 2rem;
+    color: #eaeaea; /* Light grey quote mark */
+    margin-bottom: 15px;
+}
+
+.review-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #555;
+    font-style: italic;
+    flex-grow: 1; /* Pushes profile to bottom if texts are different lengths */
+    margin-bottom: 25px;
+}
+
+/* Client Profile Area */
+.client-profile {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #f0f0f0;
+    padding-top: 20px;
+}
+
+.client-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+    border: 2px solid #b48d55; /* Gold border around image */
+}
+
+.client-name {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 5px;
+}
+
+.rating-stars {
+    color: #ffc107; /* Standard gold star color */
+    font-size: 0.8rem;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .testimonial-card {
+        padding: 20px;
+    }
+}
+
+/* ====================  Image Gallery ================ */
+
+/* CSS */
+.gallery-section {
+    background-color: #ffffff;
+}
+
+.section-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #222;
+}
+.title-line {
+    width: 60px;
+    height: 3px;
+    background-color: #b48d55;
+    margin: 15px auto;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 1 / 1; 
+    background-color: #000;
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    transition: transform 0.5s ease;
+    opacity: 1;
+}
+
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0; 
+    transition: opacity 0.3s ease;
+}
+
+/* Added Expand Icon for Lightbox feel */
+.gallery-overlay i {
+    color: #ffffff;
+    font-size: 2.5rem;
+    transform: scale(0.5); 
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05); 
+    opacity: 0.8;
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1; 
+}
+
+.gallery-item:hover .gallery-overlay i {
+    transform: scale(1); 
+}
+
+/* Modal Dark Background Tweaks */
+.modal-backdrop.show {
+    opacity: 0.85; /* Makes background darker when image pops up */
+}
+
+/* =============== Floating Icon ============== */
+
+/* CSS */
+/* --- Floating Action Buttons (WhatsApp & Call) --- */
+.floating-action-menu {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* Thoda kam gap clean look ke liye */
+    z-index: 9999; 
+}
+
+.floating-btn {
+    width: 50px; /* Size optimized for better UI */
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: #ffffff;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    transition: all 0.3s ease;
+}
+
+.floating-btn:hover {
+    transform: translateY(-3px); /* Hover par thoda upar uthega */
+    color: #ffffff;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Call Button - Premium Dark/Gold Theme */
+.btn-call-floating {
+    background-color: #121212; /* Dark background */
+    border: 2px solid #b48d55; /* Gold border */
+    color: #fff; /* Gold icon */
+}
+
+.btn-call-floating:hover {
+    background-color: #b48d55;
+    color: #fff;
+}
+
+/* WhatsApp Button */
+.btn-whatsapp-floating {
+    background-color: #25D366; 
+    border: 2px solid #25D366;
+}
+
+.btn-whatsapp-floating:hover {
+    background-color: transparent;
+    color: #25D366;
+}
+
+/* Mobile View Adjustments (Chota size taaki screen block na ho) */
+@media (max-width: 768px) {
+    .floating-action-menu {
+        bottom: 20px;
+        right: 20px;
+        gap: 10px;
+    }
+    .floating-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+    }
+}
+
+/* ================= FAQ Section =================== */
+
+/* CSS */
+.faq-section {
+    background-color: #ffffff;
+}
+
+/* Reused Heading Styles */
+.section-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #222;
+}
+.title-line {
+    width: 60px;
+    height: 3px;
+    background-color: #b48d55;
+    margin: 15px auto;
+}
+
+/* Custom Accordion Styling */
+.custom-accordion-item {
+    border: none;
+    border-bottom: 1px solid #eaeaea;
+    border-radius: 0 !important;
+    background-color: transparent;
+    margin-bottom: 10px;
+}
+
+.custom-accordion-btn {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #222;
+    background-color: transparent;
+    padding: 20px 10px;
+    box-shadow: none !important; /* Removes Bootstrap's default blue glow */
+}
+
+/* Jab question open ho */
+.custom-accordion-btn:not(.collapsed) {
+    color: #b48d55; /* Gold color for active question */
+    background-color: transparent;
+    box-shadow: none;
+}
+
+/* Accordion Arrow Color Change */
+.custom-accordion-btn::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23222'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+.custom-accordion-btn:not(.collapsed)::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23b48d55'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.accordion-body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    line-height: 1.8;
+    padding: 0 10px 30px 10px;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .custom-accordion-btn {
+        font-size: 1.1rem;
+        padding: 15px 5px;
+    }
+    .accordion-body {
+        font-size: 0.95rem;
+        padding: 0 5px 20px 5px;
+    }
+}
