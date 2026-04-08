@@ -1,0 +1,784 @@
+/* =========================================================================
+   1. GLOBAL STYLES, FONTS & TYPOGRAPHY
+   ========================================================================= */
+* {
+  font-family: "Playfair Display", serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 23.1px;
+  text-decoration: none;
+  color: #27241b;
+  letter-spacing: 0.2px;
+}
+
+@font-face {
+  font-family: Futura;
+  font-weight: 500;
+  font-style: normal;
+  font-display: fallback;
+  src:
+    url("https://www.thetopknot.in/assets/fonts/futura/futura_n5.5632c6d8a6da9141ef40e51d14264a007bcae7e57b24.woff2")
+      format("woff2"),
+    url("https://www.thetopknot.in/assets/fonts/futura/futura_n5.ea788239cf399e57dbdfe80e24bba751e5c2a36cc141.woff")
+      format("woff");
+}
+
+@font-face {
+  font-family: "Playfair Display";
+  font-weight: 400;
+  font-style: normal;
+  font-display: fallback;
+  src:
+    url("https://www.thetopknot.in/assets/fonts/playfair_display/playfairdisplay_n4.9cf7fc4f6a5a48eb27738cad395f0eba18922755c951.woff2")
+      format("woff2"),
+    url("https://www.thetopknot.in/assets/fonts/playfair_display/playfairdisplay_n4.8a3fef162b1f576396eb89e46872ef50eeb0815868e2.woff")
+      format("woff");
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: "Futura", sans-serif;
+  letter-spacing: 2.77px;
+}
+
+.h1,
+h1 {
+  font-size: max(
+    0.6875rem,
+    clamp(1.375rem, 1.146341463414634rem + 0.975609756097561vw, 2rem) * 1
+  );
+}
+.h2,
+h2 {
+  font-size: max(
+    0.6875rem,
+    clamp(1.25rem, 1.0670731707317074rem + 0.7804878048780488vw, 1.75rem) * 1
+  );
+}
+.h3,
+h3 {
+  font-size: max(
+    0.6875rem,
+    clamp(1.125rem, 1.0335365853658536rem + 0.3902439024390244vw, 1.375rem) * 1
+  );
+}
+.h4,
+h4 {
+  font-size: max(
+    0.6875rem,
+    clamp(1rem, 0.9542682926829268rem + 0.1951219512195122vw, 1.125rem) * 1
+  );
+}
+.h5,
+h5 {
+  font-size: calc(0.875rem * 1);
+}
+.h6,
+h6 {
+  font-size: calc(0.75rem * 1);
+}
+
+a {
+  color: #27241b;
+}
+a:hover {
+  color: #000000;
+}
+
+.p,
+p {
+  color: #27241b;
+  opacity: 0.9;
+  font-size: 14px;
+  line-height: 24px;
+  font-family: "Playfair Display", serif;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.2px;
+}
+
+section,
+.antialiased {
+  overflow-x: hidden !important;
+}
+main {
+  padding-top: 90px;
+}
+
+/* =========================================================================
+   2. REUSABLE UTILITY CLASSES (Backgrounds, Spacing, Common Text)
+   ========================================================================= */
+.section-topknot {
+  padding: 4rem 0;
+}
+.padding-bottom,
+.topknot-padding-bottom {
+  padding-bottom: 4rem;
+}
+.topknot-bg-dark {
+  background-color: #1c1c1c;
+}
+.topknot-bg-light {
+  background-color: #efefef;
+  border-bottom: 1px solid #cfcfcf;
+}
+.text-primary {
+  color: #c8a26f !important;
+}
+
+.topknot-heading28 {
+  font-family: "Futura", sans-serif;
+  font-size: 28px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  line-height: 39px;
+}
+.topknot-heading32 {
+  font-family: "Futura", sans-serif;
+  font-size: 32px;
+  font-weight: 500;
+  letter-spacing: 3.4px;
+  line-height: 41px;
+}
+.topknot-heading22 {
+  font-family: "Futura", sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 2.2px;
+  line-height: 33px;
+}
+.topknot_text {
+  font-family: "Playfair Display", serif;
+  font-size: 16px;
+  line-height: 24px;
+  color: #27241b;
+  opacity: 0.9;
+}
+.topknot_h6 {
+  font-family: "Futura", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: capitalize;
+  letter-spacing: 1.2px;
+  line-height: 20.4px;
+  white-space: nowrap;
+}
+
+/* =========================================================================
+   3. HEADER / NAVBAR
+   ========================================================================= */
+.navbar.navbar-expand-lg.bg-body-tertiary {
+  position: fixed;
+  z-index: 99999;
+  width: 100%;
+}
+.nav-link {
+  font-family: "Futura", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1.2px;
+  line-height: 20px;
+  color: #27241b;
+  padding: 20px 10px !important;
+}
+nav .nav-link {
+  padding: 20px 20px !important;
+  position: relative;
+}
+.nav-link:hover {
+  color: #000000;
+}
+
+.nav-link.active::before,
+.nav-link::before,
+.nav-link::after {
+  content: "";
+  transform-origin: 100% 50%;
+  transform: scale3d(0, 1, 1);
+  transition: transform 0.3s;
+  position: absolute;
+  width: calc(100% - 40px);
+  height: 3px;
+  background: currentColor;
+  top: 80%;
+  left: auto;
+  right: auto;
+  pointer-events: none;
+}
+.nav-link.active::before,
+.nav-link:hover::before {
+  transform-origin: 0% 50%;
+  transform: scale3d(1, 1, 1);
+}
+.navbar-nav .dropdown:hover .dropdown-menu {
+  display: block;
+  margin-top: 0;
+}
+.nav-item .dropdown:hover a.dropdown-item {
+  transform-origin: top center;
+  animation: rotateX 300ms ease-in-out forwards !important;
+}
+
+@-moz-keyframes rotateX {
+  0% {
+    opacity: 0;
+    transform: rotateX(-90deg);
+  }
+  50% {
+    transform: rotateX(-20deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotateX(0deg);
+  }
+}
+
+/* =========================================================================
+   4. HERO SLIDER
+   ========================================================================= */
+.carousel-item img {
+  transition: transform 0.8s ease;
+  transform: scale(1.1);
+}
+.carousel-item.active img {
+  transform: scale(1);
+}
+.carousel-indicators {
+  right: auto;
+  bottom: 35px;
+  left: 80%;
+}
+.carousel-indicators button,
+.carousel-indicators [data-bs-target] {
+  width: 8px !important;
+  height: 8px !important;
+  margin-right: 6px;
+  margin-left: 6px;
+  border-radius: 50%;
+}
+.carousel-dark .carousel-indicators button,
+.carousel-dark .carousel-indicators [data-bs-target] {
+  background-color: #fff;
+}
+
+/* =========================================================================
+   5. BUTTONS STYLING
+   ========================================================================= */
+/* Main Black Button */
+.topknot-btn {
+  appearance: none;
+  background-color: #000000;
+  border-width: 0;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  margin: 0;
+  opacity: 1;
+  line-height: 42px;
+  outline: 0;
+  height: 45px;
+  position: relative;
+  text-align: center;
+  text-transform: capitalize;
+  transition:
+    opacity 300ms cubic-bezier(0.694, 0, 0.335, 1),
+    background-color 100ms cubic-bezier(0.694, 0, 0.335, 1),
+    color 100ms cubic-bezier(0.694, 0, 0.335, 1);
+  white-space: nowrap;
+}
+.topknot-btn:before {
+  animation: opacityFallbackOut 0.5s step-end forwards;
+  background-color: #ebebeb;
+  clip-path: polygon(-1% 0, 0 0, -25% 100%, -1% 100%);
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  border: 1px solid #000000;
+  top: 0;
+  transform: translateZ(0);
+  transition: clip-path 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  width: 100%;
+}
+.topknot-btn:hover:before {
+  animation: opacityFallbackIn 0s step-start forwards;
+  clip-path: polygon(0 0, 101% 0, 101% 101%, 0 101%);
+}
+.topknot-btn:after {
+  background-color: #ffffff;
+}
+.topknot-btn span {
+  z-index: 1;
+  color: #ffffff;
+  position: relative;
+  font-family: "Playfair Display", serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 1.56px;
+  line-height: 21px;
+  padding: 10.4px 28px;
+}
+.topknot-btn:hover span {
+  color: #27241b;
+}
+
+/* Read More Blog Button */
+.animated-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 26px;
+  border: 4px solid transparent;
+  font-size: 16px;
+  background-color: inherit;
+  border-radius: 100px;
+  font-weight: 600;
+  color: #b08752;
+  box-shadow: 0 0 0 2px #b08752;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.animated-button svg {
+  position: absolute;
+  width: 24px;
+  fill: #b08752;
+  z-index: 9;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.animated-button .arr-1 {
+  right: 16px;
+  color: #b08752;
+}
+.animated-button .arr-2 {
+  left: -25%;
+}
+.animated-button .circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  background-color: #b08752;
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.animated-button .text {
+  position: relative;
+  z-index: 1;
+  transform: translateX(-12px);
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.animated-button:hover {
+  box-shadow: 0 0 0 12px transparent;
+  color: white;
+  border-radius: 12px;
+}
+.animated-button:hover .arr-1 {
+  right: -25%;
+}
+.animated-button:hover .arr-2 {
+  left: 16px;
+}
+.animated-button:hover .text {
+  transform: translateX(12px);
+}
+.animated-button:hover svg {
+  fill: #212121;
+}
+.animated-button:active {
+  scale: 0.95;
+  box-shadow: 0 0 0 4px #b08752;
+}
+.animated-button:hover .circle {
+  width: 220px;
+  height: 220px;
+  opacity: 1;
+}
+
+/* View More Button (Gold) */
+.bttn {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  background: rgb(177, 121, 61);
+  font-family: "Montserrat", sans-serif;
+  box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  cursor: pointer;
+  border: none;
+}
+.bttn:after {
+  content: " ";
+  width: 0%;
+  height: 100%;
+  background-color: rgb(211, 166, 122);
+  position: absolute;
+  transition: all 0.4s ease-in-out;
+  right: 0;
+}
+.bttn:hover::after {
+  right: auto;
+  left: 0;
+  width: 100%;
+}
+.bttn span {
+  text-align: center;
+  width: 100%;
+  padding: 18px 25px;
+  color: #fff;
+  font-size: 1.125em;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  z-index: 20;
+  transition: all 0.3s ease-in-out;
+}
+.bttn:hover span {
+  color: #183153;
+  animation: scaleUp 0.3s ease-in-out;
+}
+@keyframes scaleUp {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* =========================================================================
+   6. SERVICES TABS SECTION
+   ========================================================================= */
+.nav-tabs .nav-link {
+  border: none;
+  font-size: 16px;
+  letter-spacing: 2px;
+  font-weight: 600;
+  line-height: 12px;
+  color: #737373;
+  position: relative;
+  white-space: nowrap;
+}
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
+  font-size: 17px;
+  letter-spacing: 1.79px;
+  color: #0f0f0f;
+  background-color: transparent;
+  border-color: transparent;
+  opacity: 0.75;
+  line-height: 12px;
+  font-weight: 700;
+  position: relative;
+}
+.service-image {
+  height: 370px;
+  object-fit: cover;
+}
+
+/* =========================================================================
+   7. MAKEUP LOOKS (IMAGE / VIDEO ZOOM GALLERY)
+   ========================================================================= */
+.knk-img-zoom {
+  overflow: hidden;
+}
+.knk-img-zoom img {
+  transform-origin: center;
+  transition: scale 8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.knk-img-zoom img:hover {
+  scale: 1.2;
+}
+.knk-img-zoom video {
+  width: 100px;
+  height: 100%;
+  object-fit: cover;
+  min-width: 370px;
+  max-height: 650px;
+}
+
+/* =========================================================================
+   8. TESTIMONIALS SLIDER
+   ========================================================================= */
+.testimonial-indicators {
+  right: auto;
+  bottom: -35px;
+  left: 20%;
+}
+.topknot-testimonial-content {
+  font-size: 20px;
+  line-height: 33px;
+  opacity: 0.7;
+  font-family: "Playfair Display", serif;
+  letter-spacing: 0.2px;
+}
+
+/* =========================================================================
+   9. MARQUEE & OFFERS (COUNTDOWN)
+   ========================================================================= */
+.topknot-marqueeHeading {
+  font-family: "Futura", sans-serif;
+  font-size: 47px;
+  font-weight: 500;
+  text-transform: capitalize;
+  letter-spacing: 4.5px;
+  line-height: 78px;
+  white-space: nowrap;
+}
+
+#timer {
+  display: inline-flex;
+  line-height: 6;
+}
+.timer-part {
+  padding: 5px 10px;
+}
+#timer .timer-part span.label {
+  font-family: "Futura", sans-serif;
+  font-size: 12.5px;
+  letter-spacing: 1.2px;
+  color: #1c1c1c;
+  line-height: 20px;
+  font-weight: 500;
+}
+#timer .timer-part span.value {
+  font-family: "Futura", sans-serif;
+  font-size: 30px;
+  letter-spacing: 1.2px;
+  line-height: 41px;
+  font-weight: 500;
+}
+
+/* =========================================================================
+   10. AWARDS & TAILORED BEAUTY
+   ========================================================================= */
+.awards-topknot p,
+.awards-topknot ul li {
+  color: white !important;
+}
+.tailored-image {
+  height: 400px;
+  object-fit: none;
+}
+
+/* =========================================================================
+   11. BLOG / PARTNER BRANDS (CAROUSEL)
+   ========================================================================= */
+.text-container,
+.division {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.5;
+}
+.sportlight-topknot a {
+  text-decoration: none;
+}
+.owl-theme .owl-dots .owl-dot span {
+  background: #e1bf92;
+}
+.owl-theme .owl-dots .owl-dot.active span,
+.owl-theme .owl-dots .owl-dot:hover span {
+  background: #ffb753;
+}
+
+/* =========================================================================
+   12. FAQ ACCORDION
+   ========================================================================= */
+.accordion-item {
+  background-color: transparent;
+  font-family: "Playfair Display", serif;
+}
+.accordion-button {
+  background-color: transparent;
+  font-size: 16px;
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  line-height: 26px;
+  color: #1c1c1c !important;
+}
+.accordion-button:focus {
+  box-shadow: none;
+  border-color: transparent;
+  border: none;
+  background: transparent !important;
+}
+.accordion-button::after {
+  background-image: url(../images/add.svg);
+}
+.accordion-button:not(.collapsed)::after {
+  background-image: url(../images/minimize.svg);
+}
+
+/* =========================================================================
+   13. MODALS & FORMS
+   ========================================================================= */
+.form-control {
+  padding: 0.65rem 0.8rem;
+  border-radius: 0rem;
+  background: rgb(255 255 255);
+  text-align: start;
+  border-width: 1px;
+  width: 100%;
+  transition: border-color 0.1s ease-in-out;
+}
+.modal-content {
+  background: #ffe6c6;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.modal-content .btn-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+.modal-dialog-scrollable .modal-body {
+  overflow-x: hidden !important;
+}
+
+/* =========================================================================
+   14. FLOATING ELEMENTS & MISC
+   ========================================================================= */
+.blink-image {
+  animation: blink-animation 5s infinite;
+}
+@keyframes blink-animation {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.z-index-1 {
+  z-index: 1;
+}
+.z-index-2 {
+  z-index: 2;
+}
+.top-40 {
+  top: 40%;
+}
+
+/* =========================================================================
+   15. FOOTER
+   ========================================================================= */
+.footer-topknot ul {
+  list-style: none;
+}
+.footer-topknot ul li a {
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+.foo-icon {
+  background: #b08752;
+  font-size: 25px;
+  border: 2px solid #ce9b78;
+  border-radius: 50%;
+  padding: 6px;
+  color: white;
+  margin-bottom: 15px;
+}
+
+/* =========================================================================
+   16. MOBILE RESPONSIVE (@media)
+   ========================================================================= */
+.mobile-gift {
+  display: none;
+}
+
+@media only screen and (max-width: 767px) {
+  .mobile-gift {
+    display: block;
+  }
+  .desktop-gift {
+    display: none;
+  }
+  section {
+    overflow: hidden;
+  }
+  .top-40 {
+    top: 4%;
+  }
+  .top-40 p {
+    font-size: 13px;
+  }
+
+  .topknot-testimonial-content {
+    font-size: 18px;
+    line-height: 33px;
+    opacity: 0.7;
+    font-family: "Playfair Display", serif;
+  }
+  .about-topknot p,
+  .font-1 {
+    font-family: "Playfair Display", serif !important;
+  }
+  .font-2 {
+    font-family: "Futura", sans-serif !important;
+  }
+
+  .knk-img-zoom video {
+    width: 100px;
+    height: 100%;
+    object-fit: cover;
+    min-width: 100%;
+    min-height: 350px;
+  }
+
+  .topknot-marqueeHeading {
+    font-family: "Futura", sans-serif;
+    font-size: 32px;
+    font-weight: 500;
+    text-transform: capitalize;
+    letter-spacing: 4.5px;
+    line-height: 25px;
+    white-space: nowrap;
+  }
+  .topknot-heading32 {
+    font-family: "Futura", sans-serif;
+    font-size: 20px;
+    font-weight: bolder;
+    letter-spacing: 0.1em;
+    line-height: 2;
+    text-align: center;
+  }
+  .topknot-heading22 {
+    font-family: "Futura", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 28px;
+  }
+
+  .topknot_text {
+    font-family: "Playfair Display", serif;
+    font-size: 14px;
+    line-height: 24px;
+    color: #27241b;
+    opacity: 0.9;
+  }
+}
